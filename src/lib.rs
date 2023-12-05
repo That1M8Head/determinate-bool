@@ -69,14 +69,14 @@ mod tests {
     #[test]
     #[should_panic(expected = "Can't unwrap a false value. The original reason was Condition is false")]
     fn test_unwrap_false() {
-        let result_false = Determinate::<u32>::False;
+        let result_false = Determinate::<()>::False;
         result_false.unwrap();
     }
 
     #[test]
     #[should_panic(expected = "Can't unwrap an indeterminate value")]
     fn test_unwrap_indeterminate() {
-        let result_indeterminate = Determinate::<u32>::Indeterminate;
+        let result_indeterminate = Determinate::<()>::Indeterminate;
         result_indeterminate.unwrap();
     }
 }
